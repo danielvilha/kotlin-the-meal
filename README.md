@@ -49,11 +49,7 @@ The project will be compiled and installed on the selected device.
 - Look up Recipe Details by ID: https://www.themealdb.com/api/json/v1/1/lookup.php?i={recipe_id}
 
 ## Application Screenshots
-![Categories List](/images/categories_list.png)
-
-![Recipes List](/images/recipes_list.png)
-
-![Recipe Details](/images/recipe_details.png)
+|![Categories List](/images/categories_list.png)|![Recipes List](/images/recipes_list.png)|![Recipe Details](/images/recipe_details.png)|
 
 ## Author
 - Daniel Vilha
