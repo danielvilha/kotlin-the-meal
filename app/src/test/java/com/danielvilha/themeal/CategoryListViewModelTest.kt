@@ -2,9 +2,9 @@ package com.danielvilha.themeal
 
 import app.cash.turbine.test
 import com.danielvilha.themeal.data.dto.CategoryDto
+import com.danielvilha.themeal.features.categorylist.CategoryListUiState
+import com.danielvilha.themeal.features.categorylist.CategoryListViewModel
 import com.danielvilha.themeal.service.IMealRepository
-import com.danielvilha.themeal.ui.categories.CategoryListUiState
-import com.danielvilha.themeal.ui.categories.CategoryListViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
@@ -89,7 +89,7 @@ class CategoryListViewModelTest {
     }
 
     @Test
-    fun `whenRetrying_recoversFromError_ifCauseIsFixed`() = runTest {
+    fun `when retrying recovers from error, if cause is fixed`() = runTest {
         val errorMessage = "No Internet"
         val fakeCategories = listOf(CategoryDto(idCategory = "1", strCategory = "Beef", strCategoryThumb = "", strCategoryDescription = "Test description"))
 

@@ -1,6 +1,5 @@
-package com.danielvilha.themeal.ui.meal
+package com.danielvilha.themeal.features.mealdetails
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,10 +23,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.danielvilha.themeal.R
 import com.danielvilha.themeal.data.dto.MealDetailsDto
 import com.danielvilha.themeal.data.dto.getIngredientsList
 import com.danielvilha.themeal.ui.preview.ExcludeFromJacocoGeneratedReport
@@ -96,6 +97,8 @@ fun MealDetailsScreen(
                                 AsyncImage(
                                     model = meal.strMealThumb,
                                     contentDescription = meal.strMeal,
+                                    placeholder = painterResource(id = R.drawable.ic_meal),
+                                    error = painterResource(id = R.drawable.ic_no_meal),
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .height(220.dp)

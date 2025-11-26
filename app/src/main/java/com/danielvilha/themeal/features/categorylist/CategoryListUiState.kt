@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.categories
+package com.danielvilha.themeal.features.categorylist
 
 import com.danielvilha.themeal.data.dto.CategoryDto
 

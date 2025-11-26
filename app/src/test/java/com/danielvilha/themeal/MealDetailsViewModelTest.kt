@@ -2,9 +2,9 @@ package com.danielvilha.themeal
 
 import app.cash.turbine.test
 import com.danielvilha.themeal.data.dto.MealDetailsDto
+import com.danielvilha.themeal.features.mealdetails.MealDetailsUiState
+import com.danielvilha.themeal.features.mealdetails.MealDetailsViewModel
 import com.danielvilha.themeal.service.IMealRepository
-import com.danielvilha.themeal.ui.meal.MealDetailsUiState
-import com.danielvilha.themeal.ui.meal.MealDetailsViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
@@ -91,7 +91,7 @@ class MealDetailsViewModelTest {
     }
 
     @Test
-    fun `whenRetrying_recoversFromError_ifCauseIsFixed`() = runTest {
+    fun `when retrying recovers from error if cause is fixed`() = runTest {
         val mealId = "52772"
         val errorMessage = "No Internet"
         val fakeMeal = MealDetailsDto(mealId, "Fake Meal")

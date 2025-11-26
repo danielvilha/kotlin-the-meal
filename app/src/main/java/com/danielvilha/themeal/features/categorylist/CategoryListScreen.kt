@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.categories
+package com.danielvilha.themeal.features.categorylist
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -29,12 +29,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.danielvilha.themeal.R
 import com.danielvilha.themeal.data.dto.CategoryDto
 import com.danielvilha.themeal.ui.preview.ExcludeFromJacocoGeneratedReport
 import com.danielvilha.themeal.ui.preview.LightDarkPreview
@@ -69,7 +72,7 @@ fun CategoryListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Categories") }
+                title = { Text(text = stringResource(R.string.categories)) }
             )
         },
     ) { paddingValues ->
@@ -97,7 +100,6 @@ fun CategoryListScreen(
                 }
             }
         }
-
     }
 }
 
@@ -112,14 +114,14 @@ fun CategoryGridItem(
     val categoryColor = if (isDark) {
         Color.hsv(
             hue = hue,
-            saturation = 0.5f, // More saturation for dark theme
-            value = 0.6f      // Darker value for dark theme
+            saturation = 0.5f,
+            value = 0.6f
         )
     } else {
         Color.hsv(
             hue = hue,
-            saturation = 0.3f, // Less saturation for light theme
-            value = 0.95f     // Lighter value for light theme
+            saturation = 0.3f,
+            value = 0.95f
         )
     }
 
@@ -142,6 +144,8 @@ fun CategoryGridItem(
             AsyncImage(
                 model = category.strCategoryThumb,
                 contentDescription = category.strCategory,
+                placeholder = painterResource(id = R.drawable.ic_meal),
+                error = painterResource(id = R.drawable.ic_no_meal),
                 modifier = Modifier
                     .size(100.dp)
                     .clip(RoundedCornerShape(8.dp)),

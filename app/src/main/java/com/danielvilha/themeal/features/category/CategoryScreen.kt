@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.category
+package com.danielvilha.themeal.features.category
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,10 +30,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.danielvilha.themeal.R
 import com.danielvilha.themeal.data.dto.MealShortDto
 import com.danielvilha.themeal.ui.preview.ExcludeFromJacocoGeneratedReport
 import com.danielvilha.themeal.ui.preview.LightDarkPreview
@@ -58,7 +60,6 @@ private fun ScreenPreview(
         )
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -114,6 +115,8 @@ fun CategoryScreen(
                                     AsyncImage(
                                         model = meal.strMealThumb,
                                         contentDescription = meal.strMeal,
+                                        placeholder = painterResource(id = R.drawable.ic_meal),
+                                        error = painterResource(id = R.drawable.ic_no_meal),
                                         modifier = Modifier
                                             .size(72.dp)
                                             .clip(RoundedCornerShape(12.dp)),

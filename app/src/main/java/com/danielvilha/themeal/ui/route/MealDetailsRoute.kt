@@ -5,8 +5,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.danielvilha.themeal.ui.meal.MealDetailsScreen
-import com.danielvilha.themeal.ui.meal.MealDetailsViewModel
+import com.danielvilha.themeal.features.mealdetails.MealDetailsScreen
+import com.danielvilha.themeal.features.mealdetails.MealDetailsViewModel
 
 @Composable
 fun MealDetailsRoute(

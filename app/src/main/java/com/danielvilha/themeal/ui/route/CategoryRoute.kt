@@ -5,8 +5,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.danielvilha.themeal.ui.category.CategoryScreen
-import com.danielvilha.themeal.ui.category.CategoryViewModel
+import com.danielvilha.themeal.features.category.CategoryScreen
+import com.danielvilha.themeal.features.category.CategoryViewModel
 
 @Composable
 fun CategoryRoute(

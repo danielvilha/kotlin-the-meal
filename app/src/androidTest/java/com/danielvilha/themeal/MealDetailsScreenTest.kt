@@ -6,8 +6,8 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.danielvilha.themeal.data.dto.MealDetailsDto
-import com.danielvilha.themeal.ui.meal.MealDetailsScreen
-import com.danielvilha.themeal.ui.meal.MealDetailsUiState
+import com.danielvilha.themeal.features.mealdetails.MealDetailsScreen
+import com.danielvilha.themeal.features.mealdetails.MealDetailsUiState
 import com.danielvilha.themeal.ui.theme.TheMealTheme
 import org.junit.Rule
 import org.junit.Test

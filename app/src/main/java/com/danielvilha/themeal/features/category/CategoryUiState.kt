@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.category
+package com.danielvilha.themeal.features.category
 
 import com.danielvilha.themeal.data.dto.MealShortDto
 

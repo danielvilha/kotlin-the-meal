@@ -30,7 +30,6 @@ fun ProgressIndicator() {
             modifier = Modifier.padding(16.dp)
         )
     }
-
 }
 
 @Composable

@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.meal
+package com.danielvilha.themeal.features.mealdetails
 
 import com.danielvilha.themeal.data.dto.MealDetailsDto
 

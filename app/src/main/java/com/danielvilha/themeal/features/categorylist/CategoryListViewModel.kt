@@ -1,4 +1,4 @@
-package com.danielvilha.themeal.ui.category
+package com.danielvilha.themeal.features.categorylist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,21 +10,21 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryViewModel @Inject constructor(
+class CategoryListViewModel @Inject constructor(
     private val repository: IMealRepository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(CategoryUiState())
-    val uiState: StateFlow<CategoryUiState> = _uiState
+    private val _uiState = MutableStateFlow(CategoryListUiState())
+    val uiState: StateFlow<CategoryListUiState> = _uiState
 
-    fun loadMeals(category: String) {
+    fun loadCategories() {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, error = null)
             try {
-                val meals = repository.getMeals(category)
+                val categories = repository.getCategories()
                 _uiState.value = _uiState.value.copy(
                     isLoading = false,
-                    meals = meals
+                    categories = categories
                 )
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(
